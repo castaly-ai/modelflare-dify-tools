@@ -1,0 +1,47 @@
+identity:
+  author: modelflare
+  name: modelflare_media
+  label:
+    en_US: Modelflare Image & Video
+    zh_Hans: Modelflare 图像与视频
+  description:
+    en_US: Image and video generation with one Modelflare Smart API Key.
+    zh_Hans: 用一个 Modelflare Smart API Key 生成图像和视频。
+  icon: icon.svg
+  tags:
+    - image
+    - videos
+credentials_for_provider:
+  api_key:
+    type: secret-input
+    required: true
+    label:
+      en_US: Modelflare Smart API Key
+    placeholder:
+      en_US: "Recommended: one Smart API Key calls every model available to your account."
+      zh_Hans: 推荐使用 Smart API Key：一个 Key 调用你账号可用的全部模型。
+    help:
+      en_US: Create one under API Keys → Create Smart API Key.
+      zh_Hans: 在控制台 API Keys →“Create Smart API Key”创建。
+    url: https://modelflare.dev/sign-up?utm_source=dify&utm_medium=plugin&utm_campaign=integrations
+  region:
+    type: select
+    required: true
+    default: global
+    label:
+      en_US: Base URL
+    options:
+      - value: global
+        label:
+          en_US: Global (https://modelflare.dev/v1)
+          zh_Hans: 全球（https://modelflare.dev/v1）
+      - value: china
+        label:
+          en_US: China (https://origin.modelflare.dev/v1)
+          zh_Hans: 国内（https://origin.modelflare.dev/v1）
+tools:
+  - tools/generate_image.yaml
+  - tools/generate_video.yaml
+extra:
+  python:
+    source: provider/modelflare_media.py

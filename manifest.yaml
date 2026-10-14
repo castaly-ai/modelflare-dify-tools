@@ -1,0 +1,31 @@
+version: 0.1.0
+type: plugin
+author: modelflare
+name: modelflare_media
+label:
+  en_US: Modelflare Image & Video
+  zh_Hans: Modelflare 图像与视频
+description:
+  en_US: Generate images and videos with one Modelflare Smart API Key for every image and video model available to your account.
+  zh_Hans: 用一个 Modelflare Smart API Key，调用你账号可用的全部图像和视频模型。
+icon: icon.svg
+created_at: "2026-10-13T00:00:00Z"
+resource:
+  memory: 268435456
+  permission:
+    tool:
+      enabled: true
+plugins:
+  tools:
+    - provider/modelflare_media.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+privacy: PRIVACY.md
+repo: https://github.com/castaly-ai/modelflare-dify-tools

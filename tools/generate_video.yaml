@@ -1,0 +1,49 @@
+identity:
+  name: generate_video
+  author: modelflare
+  label:
+    en_US: Generate Video
+    zh_Hans: 生成视频
+description:
+  human:
+    en_US: Create a video with any video model available to your Modelflare key and wait for the result.
+    zh_Hans: 用你的 Modelflare Key 可用的任意视频模型创建视频并等待结果。
+  llm: Creates a Modelflare video task, waits for it and returns the video file, or the task ID if it is still running.
+parameters:
+  - name: model
+    type: dynamic-select
+    required: true
+    form: form
+    label:
+      en_US: Model
+      zh_Hans: 模型
+    human_description:
+      en_US: Video models available to your key.
+      zh_Hans: 你的 Key 可用的视频模型。
+  - name: request
+    type: string
+    required: true
+    form: llm
+    label:
+      en_US: Request (JSON)
+      zh_Hans: 请求（JSON）
+    human_description:
+      en_US: The request body from the model's page on docs.modelflare.dev. The model field is set for you.
+      zh_Hans: 按 docs.modelflare.dev 上该模型页面填写的请求体，model 字段会自动设置。
+    llm_description: JSON object with the video request fields documented for the model, such as the prompt.
+  - name: wait_seconds
+    type: number
+    required: false
+    default: 300
+    min: 0
+    max: 540
+    form: form
+    label:
+      en_US: Wait (seconds)
+      zh_Hans: 等待秒数
+    human_description:
+      en_US: How long to wait for the video before returning the task ID instead.
+      zh_Hans: 等待视频完成的最长时间，超时则返回任务 ID。
+extra:
+  python:
+    source: tools/generate_video.py
