@@ -26,6 +26,6 @@ Each model's exact fields are on its page at https://docs.modelflare.dev/models/
 - **`model_not_found`**: a regular key only calls the models of its own group. A Smart API Key calls every model available to your account.
 - **403 `insufficient_user_quota`**: top up at https://modelflare.dev/billing.
 
-Source: https://github.com/castaly-ai/modelflare-dify-tools · Privacy: [PRIVACY.md](PRIVACY.md)
+Source: https://github.com/castaly-ai/modelflare-dify-tools · Privacy: [PRIVACY.md](PRIVACY.md) · Contact: support@modelflare.dev
 
 License: MIT © Havenbyte LLC
